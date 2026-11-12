@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Finance Hub — Antigravity Edition</title>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300f2fe' stroke-width='2.2'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>"
+    type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css?v=4.0" />
+</head>
+
+<body>
+
+  
+  <canvas id="antigravityCanvas"></canvas>
+  <div id="cursorGlow" class="cursor-glow"></div>
+  <div id="cursorDot" class="cursor-dot"></div>
+  <div class="cosmic-glow glow-top-left"></div>
+  <div class="cosmic-glow glow-top-right"></div>
+  <div class="cosmic-glow glow-bottom-center"></div>
+  <div class="cosmic-grid-lines"></div>
+
+  <!-- ===================== HOME / LANDING VIEW ===================== -->
+  <div id="homeView" class="home-wrapper">
+
+    <!-- Active Session Banner (Shown if user is already logged in) -->
+    <div id="homeSessionBanner" class="home-session-banner hidden">
+      <div class="session-banner-inner">
+        <span class="pulse-dot"></span>
+        <span>Active Pilot Session: <strong id="homeSessionUser">@pilot</strong></span>
+        <button class="btn btn-primary btn-xs" id="homeResumeSessionBtn">
+          <span>Return to Cockpit</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Home Top Navigation -->
+    <header class="home-nav glass-panel" id="homeNav">
+      <div class="home-nav-inner">
+        <a href="#hero" class="home-brand" id="homeLogoBtn">
+          <div class="mark-logo pulse-aura">
+            <svg class="levitate-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <div class="name">Smart Finance <span class="gradient-text">Hub</span></div>
+             </div>
+        </a>
+
+        <nav class="home-nav-links" id="homeNavLinks">
+          <a href="#features-sec" class="hlink">Features</a>
+          <a href="#simulator-sec" class="hlink">Simulator</a>
+          <a href="#showcase-sec" class="hlink">Showcase</a>
+          <a href="#comparison-sec" class="hlink">Why Hub</a>
+          <a href="#pricing-sec" class="hlink">Tiers</a>
+          <a href="#faq-sec" class="hlink">FAQ</a>
+        </nav>
+
+        <div class="home-nav-actions">
+          <button class="btn btn-glass btn-sm" id="homeDemoBtnNav" title="Instant 1-click test drive">
+            <span class="btn-icon">⚡</span>
+            <span>Live Demo</span>
+          </button>
+          <button class="btn btn-outline-glass btn-sm" id="homeLoginBtnNav">
+            <span>Log In</span>
+          </button>
+          <button class="btn btn-primary btn-sm btn-shimmer" id="homeSignupBtnNav">
+            <span>Get Started</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="hamburger home-hamburger" id="homeHamburgerBtn" aria-label="Toggle Navigation">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="home-hero" id="hero">
+      <div class="hero-bg-orb orb-1"></div>
+      <div class="hero-bg-orb orb-2"></div>
+      
+      <div class="hero-content">
+        <div class="hero-pill-badge animate-float-slow">
+         
+        </div>
+
+        <h1 class="hero-title">
+          Master Your Wealth in <br/>
+          <span class="gradient-text cosmic-title-glow">Zero Gravity</span>.
+        </h1>
+
+        <p class="hero-lead">
+          Intelligent real-time portfolio telemetry, autonomous investment simulators, predictive horizon budgeting, and quantum-grade client-side encryption. Built for ambitious pilots navigating their financial cosmos.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary btn-xl btn-shimmer" id="heroGetStartedBtn">
+            <span class="btn-icon">🚀</span>
+            <span>Launch Free Flight</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          
+          <button class="btn btn-glass btn-xl" id="heroDemoBtn">
+            <span class="btn-icon">⚡</span>
+            <span>Explore Live Demo</span>
+          </button>
+
+          <button class="btn btn-outline-glass btn-xl" id="heroLoginBtn">
+            <span>🔐 Pilot Sign In</span>
+          </button>
+        </div>
+
+        <div class="hero-metrics-strip">
+          <div class="metric-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>100% Client-Side Privacy</span>
+          </div>
+          <div class="metric-separator">•</div>
+          <div class="metric-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Zero-Latency Telemetry</span>
+          </div>
+          <div class="metric-separator">•</div>
+          <div class="metric-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Autonomous Investment Simulation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL: 3D Holographic Cockpit Card -->
+      <div class="hero-visual-wrap">
+        <div class="hero-3d-card glass-panel tilt-card">
+          <div class="hero-cockpit-header">
+            <div class="cockpit-dots">
+              <span class="dot red"></span>
+              <span class="dot gold"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="cockpit-title mono">ORBITAL-FINANCE-TELEMETRY // V2.4</div>
+            <div class="cockpit-status"><span class="pulse-dot"></span> LIVE FLIGHT</div>
+          </div>
+
+          <div class="cockpit-body">
+            <div class="cockpit-main-stat">
+              <div class="stat-lbl">TOTAL ORBITAL NET WORTH</div>
+              <div class="stat-val mono gradient-text">₹18,45,290.00</div>
+              <div class="stat-badge positive">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span>+₹42,850 (+18.4% APY)</span>
+              </div>
+            </div>
+
+            <div class="cockpit-grid">
+              <div class="cockpit-tile glass-card">
+                <div class="tile-icon income-ic">↑</div>
+                <div class="tile-meta">
+                  <span class="tile-lbl">Monthly Inflow</span>
+                  <span class="tile-val mono text-primary">₹1,45,000</span>
+                </div>
+              </div>
+              <div class="cockpit-tile glass-card">
+                <div class="tile-icon expense-ic">↓</div>
+                <div class="tile-meta">
+                  <span class="tile-lbl">Horizon Outflow</span>
+                  <span class="tile-val mono text-red">₹54,200</span>
+                </div>
+              </div>
+              <div class="cockpit-tile glass-card">
+                <div class="tile-icon invest-ic">✦</div>
+                <div class="tile-meta">
+                  <span class="tile-lbl">Galaxy Holdings</span>
+                  <span class="tile-val mono text-cyan">₹11,24,000</span>
+                </div>
+              </div>
+              <div class="cockpit-tile glass-card">
+                <div class="tile-icon goal-ic">🎯</div>
+                <div class="tile-meta">
+                  <span class="tile-lbl">Missions Funded</span>
+                  <span class="tile-val mono text-gold">4 Active (88%)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cockpit-mini-chart">
+              <div class="mini-chart-header">
+                <span>COMPOUND WEALTH TRAJECTORY</span>
+                <span class="mono text-cyan">+24.6% PROJECTION</span>
+              </div>
+              <div class="chart-svg-wrap">
+                <svg viewBox="0 0 400 90" class="hero-sparkline">
+                  <defs>
+                    <linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(0, 242, 254, 0.45)"/>
+                      <stop offset="100%" stop-color="rgba(0, 242, 254, 0.0)"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,75 Q40,65 80,68 T160,50 T240,40 T320,20 T400,8 L400,90 L0,90 Z" fill="url(#heroGrad)"/>
+                  <path d="M0,75 Q40,65 80,68 T160,50 T240,40 T320,20 T400,8" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="400" cy="8" r="4" fill="var(--primary)" class="pulse-point"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Orbit Badges -->
+          <div class="floating-badge badge-orbit-1 glass-card">
+            <span class="ic">⚡</span>
+            <div>
+              <div class="t">Auto-SIP Engine</div>
+              <div class="v mono text-primary">Executed 5/5</div>
+            </div>
+          </div>
+          <div class="floating-badge badge-orbit-2 glass-card">
+            <span class="ic">🛡️</span>
+            <div>
+              <div class="t">Zero-Knowledge Vault</div>
+              <div class="v text-soft">Encrypted Local Storage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE MARKET TELEMETRY STREAMER -->
+    <div class="home-market-streamer">
+      <div class="streamer-label">
+        <span class="pulse-dot"></span>
+        <span class="mono">LIVE TELEMETRY STREAM:</span>
+      </div>
+      <div class="streamer-track-wrap">
+        <div class="streamer-track" id="homeMarketTicker">
+          <!-- Dynamic Items Injected by Script -->
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE WEALTH & SIP SIMULATOR SECTION -->
+    <section class="home-section" id="simulator-sec">
+      <div class="section-badge"><span class="badge-dot"></span> INTERACTIVE FLIGHT CALCULATOR</div>
+      <h2 class="section-title">Simulate Your Wealth Horizon</span></h2>
+      <p class="section-sub">Tweak your monthly propellant, target horizon, and estimated returns to visualize your exponential compound trajectory.</p>
+
+      <div class="sim-cockpit-container glass-panel">
+        <div class="sim-inputs-col">
+          <div class="sim-control-group">
+            <div class="sim-control-header">
+              <label for="homeSimMonthly">Monthly SIP Injection</label>
+              <div class="sim-val-display mono text-cyan" id="homeSimMonthlyVal">₹15,000</div>
+            </div>
+            <input type="range" id="homeSimMonthly" min="1000" max="100000" step="1000" value="15000" class="sim-slider" />
+            <div class="sim-range-labels">
+              <span>₹1,000</span>
+              <span>₹50,000</span>
+              <span>₹1,00,000</span>
+            </div>
+          </div>
+
+          <div class="sim-control-group">
+            <div class="sim-control-header">
+              <label for="homeSimReturn">Expected Annual APY</label>
+              <div class="sim-val-display mono text-primary" id="homeSimReturnVal">14.0%</div>
+            </div>
+            <input type="range" id="homeSimReturn" min="4" max="30" step="0.5" value="14" class="sim-slider" />
+            <div class="sim-range-labels">
+              <span>4% (Conservative)</span>
+              <span>14% (Growth)</span>
+              <span>30% (High Vol)</span>
+            </div>
+          </div>
+
+          <div class="sim-control-group">
+            <div class="sim-control-header">
+              <label for="homeSimYears">Time Horizon (Years)</label>
+              <div class="sim-val-display mono text-gold" id="homeSimYearsVal">10 Years</div>
+            </div>
+            <input type="range" id="homeSimYears" min="1" max="30" step="1" value="10" class="sim-slider" />
+            <div class="sim-range-labels">
+              <span>1 Year</span>
+              <span>15 Years</span>
+              <span>30 Years</span>
+            </div>
+          </div>
+
+          <div class="sim-control-group">
+            <div class="sim-control-header">
+              <label for="homeSimInitial">Initial Reserve Capital</label>
+              <div class="sim-val-display mono text-soft" id="homeSimInitialVal">₹50,000</div>
+            </div>
+            <input type="range" id="homeSimInitial" min="0" max="1000000" step="10000" value="50000" class="sim-slider" />
+            <div class="sim-range-labels">
+              <span>₹0</span>
+              <span>₹5,00,000</span>
+              <span>₹10,00,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-results-col">
+          <div class="sim-corpus-card glass-card">
+            <div class="corpus-eyebrow">ESTIMATED FUTURE HORIZON VALUE</div>
+            <div class="corpus-main-val mono gradient-text" id="homeSimTotalCorpus">₹42,88,416</div>
+            <div class="corpus-multiplier-badge" id="homeSimMultiplier">🚀 2.3x Wealth Multiplier</div>
+
+            <div class="corpus-breakdown-row">
+              <div class="breakdown-item">
+                <span class="lbl">Principal Invested</span>
+                <span class="val mono text-soft" id="homeSimInvested">₹18,50,000</span>
+              </div>
+              <div class="breakdown-divider">+</div>
+              <div class="breakdown-item">
+                <span class="lbl">Compound Gains</span>
+                <span class="val mono text-primary" id="homeSimGains">₹24,38,416</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic SVG Projection Chart -->
+          <div class="sim-chart-wrap glass-card">
+            <div class="chart-top-bar">
+              <span class="mono chart-title">ORBITAL COMPOUND CURVE</span>
+              <span class="chart-badge mono" id="homeSimYearsBadge">10-YR TRAJECTORY</span>
+            </div>
+            <div class="svg-chart-container">
+              <svg id="homeSimSvgChart" viewBox="0 0 500 160" preserveAspectRatio="none" class="sim-projection-svg">
+                <defs>
+                  <linearGradient id="simAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(0, 245, 155, 0.4)"/>
+                    <stop offset="100%" stop-color="rgba(0, 245, 155, 0.0)"/>
+                  </linearGradient>
+                  <linearGradient id="simInvestedGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(56, 189, 248, 0.25)"/>
+                    <stop offset="100%" stop-color="rgba(56, 189, 248, 0.0)"/>
+                  </linearGradient>
+                </defs>
+                <path id="homeSimInvestedArea" fill="url(#simInvestedGrad)" d=""/>
+                <path id="homeSimTotalArea" fill="url(#simAreaGrad)" d=""/>
+                <path id="homeSimInvestedLine" fill="none" stroke="var(--blue)" stroke-width="2" stroke-dasharray="4,4" d=""/>
+                <path id="homeSimTotalLine" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" d=""/>
+              </svg>
+            </div>
+            <div class="chart-legend">
+              <span class="leg-item"><span class="leg-dot total"></span> Total Projected Corpus</span>
+              <span class="leg-item"><span class="leg-dot invested"></span> Principal Invested</span>
+            </div>
+          </div>
+
+          <div class="sim-cta-row">
+            <button class="btn btn-primary btn-block btn-shimmer" id="homeSimLaunchBtn">
+              <span>Execute This Plan in Your Space</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE FEATURE SHOWCASE / TABS -->
+    <section class="home-section" id="showcase-sec">
+      <div class="section-badge"><span class="badge-dot"></span> LIVE SYSTEM CAPABILITIES</div>
+      <h2 class="section-title">A Complete Financial Flight Deck</h2>
+      <p class="section-sub">Explore the specialized modules engineered for zero-gravity wealth management.</p>
+
+      <div class="showcase-tabs-nav" id="showcaseTabs">
+        <button class="tab-btn active" data-tab="dash">
+          <span class="tab-ic">🛸</span>
+          <span>Mission Dashboard</span>
+        </button>
+        <button class="tab-btn" data-tab="invest">
+          <span class="tab-ic">🌌</span>
+          <span>Investment Galaxy</span>
+        </button>
+        <button class="tab-btn" data-tab="budgets">
+          <span class="tab-ic">⚡</span>
+          <span>Horizon Budgets</span>
+        </button>
+        <button class="tab-btn" data-tab="goals">
+          <span class="tab-ic">🎯</span>
+          <span>Savings Missions</span>
+        </button>
+        <button class="tab-btn" data-tab="reports">
+          <span class="tab-ic">📊</span>
+          <span>Analytics Telemetry</span>
+        </button>
+      </div>
+
+      <div class="showcase-display glass-panel" id="showcaseDisplay">
+        <!-- Content will be rendered dynamically by JavaScript -->
+      </div>
+    </section>
+
+    <!-- BENTO INNOVATION GRID -->
+    <section class="home-section" id="features-sec">
+      <div class="section-badge"><span class="badge-dot"></span> SYSTEM ARCHITECTURE</div>
+      <h2 class="section-title">Engineered for <span class="gradient-text">Speed &amp; Sovereignty</span></h2>
+      <p class="section-sub">Built from the ground up without bloatware, tracking cookies, or subscription paywalls.</p>
+
+      <div class="bento-grid">
+        <div class="bento-card bento-span-2 glass-panel tilt-card">
+          <div class="bento-glow-border"></div>
+          <div class="bento-badge">AUTONOMOUS MARKETS</div>
+          <div class="bento-icon-box">🌌</div>
+          <h3>Simulated Investment Galaxy &amp; Automated SIP</h3>
+          <p>Experience real-time price volatility on Sovereign Gilts, Blue-Chip Baskets, Emerging Growth Funds, Gold Trusts, and REITs. Simulate buy/sell transactions and set automated SIP triggers with zero real-world financial risk.</p>
+          <div class="bento-ticker-preview">
+            <span class="mono tag text-cyan">GILT ₹120.40 (+0.5%)</span>
+            <span class="mono tag text-primary">BCHP ₹352.10 (+1.8%)</span>
+            <span class="mono tag text-gold">GOLD ₹634.80 (+0.7%)</span>
+          </div>
+        </div>
+
+        <div class="bento-card glass-panel tilt-card">
+          <div class="bento-glow-border"></div>
+          <div class="bento-badge">GAMIFIED GOALS</div>
+          <div class="bento-icon-box">🎯</div>
+          <h3>Propellant Savings Missions</h3>
+          <p>Set financial objectives with target dates and inject funds as fuel. Watch visual orbital gauges fill as you close in on your mission.</p>
+        </div>
+
+        <div class="bento-card glass-panel tilt-card">
+          <div class="bento-glow-border"></div>
+          <div class="bento-badge">ZERO-KNOWLEDGE</div>
+          <div class="bento-icon-box">🛡️</div>
+          <h3>100% Client-Side Privacy</h3>
+          <p>Your ledger stays inside your browser vault. Zero third-party telemetry, zero bank credential scraping, zero data selling. True financial sovereignty.</p>
+        </div>
+
+        <div class="bento-card glass-panel tilt-card">
+          <div class="bento-glow-border"></div>
+          <div class="bento-badge">REAL-TIME CAPS</div>
+          <div class="bento-icon-box">⚡</div>
+          <h3>Horizon Envelope Budgets</h3>
+          <p>Establish dynamic threshold ceilings per category. Get immediate visual warnings the moment an outflow exceeds your target envelope.</p>
+        </div>
+
+        <div class="bento-card bento-span-2 glass-panel tilt-card">
+          <div class="bento-glow-border"></div>
+          <div class="bento-badge">DEEP ANALYTICS</div>
+          <div class="bento-icon-box">📊</div>
+          <h3>Predictive Telemetry &amp; Cashflow Ratios</h3>
+          <p>Analyze income-to-expense burn rates, categorical distributions, monthly variances, and net worth accumulation curves in real time. Export sanitized CSV and print-ready executive flight records.</p>
+          <div class="bento-stats-preview">
+            <div class="stat-pill"><span class="lbl">Burn Rate</span> <span class="v mono text-primary">37.4%</span></div>
+            <div class="stat-pill"><span class="lbl">Savings Efficiency</span> <span class="v mono text-cyan">62.6%</span></div>
+            <div class="stat-pill"><span class="lbl">Telemetry Health</span> <span class="v mono text-gold">Optimal</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY SMART FINANCE HUB / COMPARISON MATRIX -->
+    <section class="home-section" id="comparison-sec">
+      <div class="section-badge"><span class="badge-dot"></span> DIRECT COMPARISON</div>
+      <h2 class="section-title">Why Pilots Choose <span class="gradient-text">Smart Finance Hub</span></h2>
+      <p class="section-sub">See how our zero-gravity platform compares to outdated spreadsheets and invasive banking apps.</p>
+
+      <div class="comparison-table-wrap glass-panel">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature Capability</th>
+              <th class="highlight-col">Smart Finance Hub 🚀</th>
+              <th>Clunky Bank Apps 🏦</th>
+              <th>Manual Excel / Sheets 📊</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Data Privacy &amp; Ownership</strong></td>
+              <td class="highlight-col"><span class="badge-check">✓ 100% Client-Side Vault</span></td>
+              <td><span class="badge-cross">✕ Monitored / Monetized</span></td>
+              <td><span class="badge-check">✓ Local Files</span></td>
+            </tr>
+            <tr>
+              <td><strong>Autonomous Market Simulators</strong></td>
+              <td class="highlight-col"><span class="badge-check">✓ Built-in 5 Asset Engines</span></td>
+              <td><span class="badge-cross">✕ None</span></td>
+              <td><span class="badge-cross">✕ Requires Complex Scripts</span></td>
+            </tr>
+            <tr>
+              <td><strong>Real-Time Dynamic Horizon Budgets</strong></td>
+              <td class="highlight-col"><span class="badge-check">✓ Visual Alerts &amp; Caps</span></td>
+              <td><span class="badge-partial">▲ Delayed Sync</span></td>
+              <td><span class="badge-cross">✕ Manual Updates Only</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gamified Propellant Savings Goals</strong></td>
+              <td class="highlight-col"><span class="badge-check">✓ Interactive Orbits</span></td>
+              <td><span class="badge-cross">✕ Boring Lists</span></td>
+              <td><span class="badge-cross">✕ No Native Telemetry</span></td>
+            </tr>
+            <tr>
+              <td><strong>Speed &amp; Instant Boot Time</strong></td>
+              <td class="highlight-col"><span class="badge-check">✓ Instant Zero-Latency</span></td>
+              <td><span class="badge-cross">✕ Slow 2FA &amp; Loaders</span></td>
+              <td><span class="badge-partial">▲ File Loading Delay</span></td>
+            </tr>
+            <tr>
+              <td><strong>Cost / Subscription Model</strong></td>
+              <td class="highlight-col"><span class="badge-check">✓ 100% Free Forever</span></td>
+              <td><span class="badge-cross">✕ Monthly Fees / Ads</span></td>
+              <td><span class="badge-check">✓ Free / Software Cost</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS / PILOT REVIEWS -->
+    <section class="home-section" id="testimonials-sec">
+      <div class="section-badge"><span class="badge-dot"></span> PILOT LOGS</div>
+      <h2 class="section-title">Transmissions from <span class="gradient-text">Active Pilots</span></h2>
+      <p class="section-sub">Hear what users navigating the financial cosmos have to say.</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-panel tilt-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"The dark matter aesthetics and simulated investment galaxy made personal finance addictive. I went from ignoring my savings to tracking every single inflow with joy."</p>
+          <div class="pilot-info">
+            <div class="pilot-avatar">AK</div>
+            <div>
+              <div class="pilot-name">Aarav Kapoor</div>
+              <div class="pilot-role text-muted">Senior Software Architect • Bengaluru</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-panel tilt-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Total privacy was non-negotiable for me. Having all data encrypted locally in my browser with zero cloud trackers is a breath of fresh air in 2026."</p>
+          <div class="pilot-info">
+            <div class="pilot-avatar" style="background:linear-gradient(135deg, var(--cyan), var(--blue));">PM</div>
+            <div>
+              <div class="pilot-name">Pooja Mukherjee</div>
+              <div class="pilot-role text-muted">Independent Quant Researcher • Mumbai</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card glass-panel tilt-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"The SIP compounding simulator and horizon budget caps helped me buy my dream EV 4 months ahead of schedule. The UX is simply out of this world."</p>
+          <div class="pilot-info">
+            <div class="pilot-avatar" style="background:linear-gradient(135deg, var(--gold), var(--red));">RS</div>
+            <div>
+              <div class="pilot-name">Rohan Sharma</div>
+              <div class="pilot-role text-muted">Product Lead • Hyderabad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSPARENT FLIGHT PLANS / PRICING -->
+    <section class="home-section" id="pricing-sec">
+      <div class="section-badge"><span class="badge-dot"></span> MISSION TIERS</div>
+      <h2 class="section-title">Transparent <span class="gradient-text">Flight Tiers</span></h2>
+      <p class="section-sub">No predatory subscriptions. No hidden telemetry fees. Free and open for everyone.</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card glass-panel tilt-card">
+          <div class="plan-header">
+            <h3>Cadet Explorer</h3>
+            <div class="plan-price"><span class="val mono">₹0</span><span class="per">/ forever</span></div>
+            <p class="plan-desc">Perfect for individual pilots taking control of personal expenses &amp; income.</p>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Unlimited Inflows &amp; Outflows</li>
+            <li>✓ Horizon Envelope Budgeting</li>
+            <li>✓ Savings Missions Tracker</li>
+            <li>✓ 100% Client-Side Vault</li>
+            <li>✓ Analytics &amp; Telemetry Reports</li>
+          </ul>
+          <button class="btn btn-outline-glass btn-block" id="planCadetBtn">Launch Cadet</button>
+        </div>
+
+        <div class="pricing-card pricing-featured glass-panel tilt-card">
+          <div class="popular-ribbon">MOST POPULAR</div>
+          <div class="plan-header">
+            <h3>Orbital Commander</h3>
+            <div class="plan-price"><span class="val mono gradient-text">₹0</span><span class="per">/ Free &amp; Unlocked</span></div>
+            <p class="plan-desc">Complete financial flight deck with simulated multi-asset market engines.</p>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Everything in Cadet Explorer</li>
+            <li>✓ Autonomous Investment Galaxy</li>
+            <li>✓ Automated SIP Execution Engine</li>
+            <li>✓ Live Real-Time Ticker Feeds</li>
+            <li>✓ Historical Volatility Telemetry</li>
+            <li>✓ Printable Flight Dossiers &amp; CSV Export</li>
+          </ul>
+          <button class="btn btn-primary btn-block btn-shimmer" id="planCommanderBtn">Launch Commander</button>
+        </div>
+
+        <div class="pricing-card glass-panel tilt-card">
+          <div class="plan-header">
+            <h3>Galactic Titan</h3>
+            <div class="plan-price"><span class="val mono">Open</span><span class="per">/ Community Edition</span></div>
+            <p class="plan-desc">For power users and teams who want custom instruments and self-hosting.</p>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Everything in Orbital Commander</li>
+            <li>✓ Full Local Source Control</li>
+            <li>✓ Custom Instrument Definitions</li>
+            <li>✓ Standalone Node.js Telemetry Daemon</li>
+            <li>✓ Zero External API Dependencies</li>
+          </ul>
+          <button class="btn btn-outline-glass btn-block" id="planTitanBtn">Explore Source</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
+    <section class="home-section" id="faq-sec">
+      <div class="section-badge"><span class="badge-dot"></span> KNOWLEDGE BASE</div>
+      <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <p class="section-sub">Everything you need to know about the Antigravity Smart Finance Hub.</p>
+
+      <div class="faq-accordion-wrap">
+        <div class="faq-item glass-panel">
+          <button class="faq-question">
+            <span>Where is my financial data stored?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your data is stored 100% locally inside your browser's persistent storage (LocalStorage vault). No credentials, transactions, or account balances are ever transmitted to any external server or third-party cloud.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question">
+            <span>Are the investment market instruments real or simulated?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The Investment Galaxy features high-fidelity mathematical simulation engines based on seeded pseudo-random brownian motion formulas. It mirrors realistic market volatility across Sovereign Gilts, Blue-Chip equities, Emerging Growth assets, Gold Reserves, and Real Estate Trusts without risking actual capital.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question">
+            <span>How does the Instant Live Demo work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Clicking "Explore Live Demo" instantly generates a complete sample universe pre-loaded with realistic income records, categorized expenses, active SIP investments, and savings goals so you can test all features immediately without entering personal details.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question">
+            <span>Can I export or backup my transactions?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! In the Analytics &amp; Telemetry section, you can export your entire ledger as sanitized CSV data or print clean, formatted flight logs at any time.</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question">
+            <span>Does this web application work completely offline?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Since all computational logic, simulation formulas, and storage mechanisms operate purely client-side, you can record transactions, simulate markets, and track goals without an active internet connection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL HIGH-IMPACT CTA BANNER -->
+    <section class="home-cta-banner glass-panel">
+      <div class="cta-glow-backdrop"></div>
+      <div class="cta-banner-content">
+        <h2 class="cta-title">Ready to Take Command of Your <span class="gradient-text">Financial Orbit</span>?</h2>
+        <p class="cta-sub">Join thousands of smart pilots managing wealth in zero gravity. Instant access, zero friction.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-xl btn-shimmer" id="ctaSignupBtn">
+            <span>🚀 Launch Your Space Free</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn btn-glass btn-xl" id="ctaDemoBtn">
+            <span>⚡ Test Drive Live Demo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURISTIC FOOTER -->
+    <footer class="home-footer" id="footer-sec">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="home-brand">
+            <div class="mark-logo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <div class="brand-text">
+              <div class="name">Smart Finance <span class="gradient-text">Hub</span></div>
+              <div class="badge-orbit"><span class="pulse-dot"></span> Antigravity OS</div>
+            </div>
+          </div>
+          <p class="footer-bio">Autonomous, zero-gravity personal finance platform engineered with dark-matter glassmorphism and client-side encryption.</p>
+          <div class="footer-status-pill">
+            <span class="status-indicator-green"></span>
+            <span class="mono">ANTIGRAVITY ENGINE: 100% OPERATIONAL</span>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <a href="#hero">Mission Control</a>
+          <a href="#features-sec">Core Architecture</a>
+          <a href="#simulator-sec">Wealth Simulator</a>
+          <a href="#showcase-sec">Module Showcase</a>
+          <a href="#pricing-sec">Flight Tiers</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Security &amp; Vault</h4>
+          <a href="#faq-sec">Zero-Knowledge Storage</a>
+          <a href="#faq-sec">Local Encrypted Vault</a>
+          <a href="#faq-sec">Data Sovereignty</a>
+          <a href="#faq-sec">Offline Capability</a>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Direct Actions</h4>
+          <button class="footer-link-btn" id="footerDemoBtn">⚡ Instant Live Demo</button>
+          <button class="footer-link-btn" id="footerLoginBtn">🔐 Pilot Sign In</button>
+          <button class="footer-link-btn" id="footerSignupBtn">🚀 Create Space Account</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 Smart Finance Hub — Antigravity Edition. Built with modern web standards.</div>
+        <div class="footer-badges">
+          <span class="mono">VER 2.4.0</span>
+          <span>•</span>
+          <span class="mono">LOCAL-FIRST</span>
+          <span>•</span>
+          <span class="mono">ZERO-TRACKERS</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ===================== AUTH VIEWS ===================== -->
+  <div id="authView" class="hidden">
+
+    <div id="loginScreen" class="auth-wrap">
+      <div class="auth-card glass-panel">
+        <div class="card-glow-border"></div>
+        <div class="auth-top-actions">
+          <button class="btn btn-outline-glass btn-sm back-to-home-btn" id="loginBackHomeBtn" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Home</span>
+          </button>
+        </div>
+        <div class="auth-brand">
+          <div class="mark-logo">
+            <svg class="levitate-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div class="name">Smart Finance <span class="gradient-text">Hub</span></div>
+        </div>
+        <h1>Welcome Back</h1>
+        <div class="auth-sub">Access your intelligent financial cosmos.</div>
+        <div id="loginError" class="form-error hidden"></div>
+        <form id="loginForm">
+          <div class="field">
+            <label for="loginUsername">Username</label>
+            <div class="input-wrap">
+              <input id="loginUsername" name="username" type="text" autocomplete="username" required
+                placeholder="e.g. nitish" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <div class="input-wrap has-toggle">
+              <input id="loginPassword" name="password" type="password" autocomplete="current-password" required
+                placeholder="••••••••" />
+              <button type="button" class="pw-toggle-btn" data-target="loginPassword" aria-label="Toggle password visibility">
+                <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="eye-closed hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block btn-shimmer" type="submit" id="loginSubmitBtn">
+            <span>Log in to Space</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </form>
+        <div class="oauth-divider"><span>or connect with</span></div>
+        <div class="oauth-row" style="grid-template-columns:1fr;">
+          <button class="btn btn-glass btn-block" type="button" id="gmailLoginBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <path fill="#EA4335"
+                d="M12 10.2v3.9h5.5c-.24 1.4-1.7 4.1-5.5 4.1-3.3 0-6-2.7-6-6.2s2.7-6.2 6-6.2c1.9 0 3.1.8 3.9 1.5l2.7-2.6C16.9 3 14.7 2 12 2 6.9 2 2.7 6.1 2.7 12S6.9 22 12 22c6.9 0 9.3-4.9 9.3-7.4 0-.5-.1-.9-.1-1.3H12z" />
+            </svg>
+            Continue with Google
+          </button>
+        </div>
+        <div class="form-hint" style="text-align:center;margin-top:14px;">Instant simulated login — no credentials sent
+          outside your browser.</div>
+        <div class="auth-switch">New to Smart Finance Hub? <button class="link-btn" id="toRegister">Create an
+            account</button></div>
+      </div>
+    </div>
+
+    <div id="registerScreen" class="auth-wrap hidden">
+      <div class="auth-card glass-panel">
+        <div class="card-glow-border"></div>
+        <div class="auth-top-actions">
+          <button class="btn btn-outline-glass btn-sm back-to-home-btn" id="registerBackHomeBtn" type="button">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <span>Back to Home</span>
+          </button>
+        </div>
+        <div class="auth-brand">
+          <div class="mark-logo">
+            <svg class="levitate-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div class="name">Smart Finance <span class="gradient-text">Hub</span></div>
+        </div>
+        <h1>Create Account</h1>
+        <div class="auth-sub">Track assets, budgets &amp; investments in zero gravity.</div>
+        <div id="registerError" class="form-error hidden"></div>
+        <form id="registerForm">
+          <div class="field">
+            <label for="regName">Full name</label>
+            <div class="input-wrap">
+              <input id="regName" name="name" type="text" required placeholder="Nitish Kumar" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="regUsername">Username</label>
+            <div class="input-wrap">
+              <input id="regUsername" name="username" type="text" required placeholder="nitish" />
+            </div>
+            <div class="form-hint">3–20 characters: letters, numbers, underscore.</div>
+          </div>
+          <div class="field">
+            <label for="regEmail">Email</label>
+            <div class="input-wrap">
+              <input id="regEmail" name="email" type="email" required placeholder="nitish@example.com" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="regPhone">Mobile Number (optional)</label>
+            <div class="input-wrap">
+              <input id="regPhone" name="phone" type="tel" placeholder="+91 9876543210" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="regPassword">Strong Password</label>
+            <div class="input-wrap has-toggle">
+              <input id="regPassword" name="password" type="password" required minlength="8"
+                placeholder="e.g. Strong@2026" autocomplete="new-password" />
+              <button type="button" class="pw-toggle-btn" data-target="regPassword" aria-label="Toggle password visibility">
+                <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="eye-closed hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </button>
+            </div>
+            <!-- Live Strength Indicator -->
+            <div class="pw-strength-box" id="regPwStrengthBox">
+              <div class="pw-strength-header">
+                <span class="pw-strength-title">Security Strength: <strong id="regPwStrengthLabel" class="pw-strength-none">None</strong></span>
+                <span class="pw-strength-score" id="regPwScore">0/5 rules met</span>
+              </div>
+              <div class="pw-strength-bar-track">
+                <div class="pw-strength-bar" id="regPwStrengthBar"></div>
+              </div>
+              <ul class="pw-requirements" id="regPwRequirements">
+                <li data-rule="length" class="req-item"><span class="req-icon">✕</span> 8+ characters</li>
+                <li data-rule="upper" class="req-item"><span class="req-icon">✕</span> 1 uppercase (A-Z)</li>
+                <li data-rule="lower" class="req-item"><span class="req-icon">✕</span> 1 lowercase (a-z)</li>
+                <li data-rule="number" class="req-item"><span class="req-icon">✕</span> 1 number (0-9)</li>
+                <li data-rule="special" class="req-item"><span class="req-icon">✕</span> 1 special symbol (!@#$)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="field">
+            <label for="regConfirm">Confirm Password</label>
+            <div class="input-wrap has-toggle">
+              <input id="regConfirm" name="confirm" type="password" required minlength="8" placeholder="Repeat your password" autocomplete="new-password" />
+              <button type="button" class="pw-toggle-btn" data-target="regConfirm" aria-label="Toggle password visibility">
+                <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <svg class="eye-closed hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="pw-match-hint" id="regPwMatchHint"></div>
+          </div>
+          <button class="btn btn-primary btn-block btn-shimmer" type="submit" id="registerSubmitBtn">
+            <span>Launch Account</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </form>
+        <div class="oauth-divider"><span>or sign up with</span></div>
+        <div class="oauth-row" style="grid-template-columns:1fr;">
+          <button class="btn btn-glass btn-block google-signin-btn" type="button" id="gmailRegisterBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24">
+              <path fill="#EA4335"
+                d="M12 10.2v3.9h5.5c-.24 1.4-1.7 4.1-5.5 4.1-3.3 0-6-2.7-6-6.2s2.7-6.2 6-6.2c1.9 0 3.1.8 3.9 1.5l2.7-2.6C16.9 3 14.7 2 12 2 6.9 2 2.7 6.1 2.7 12S6.9 22 12 22c6.9 0 9.3-4.9 9.3-7.4 0-.5-.1-.9-.1-1.3H12z" />
+            </svg>
+            Sign up with Google
+          </button>
+        </div>
+        <div class="auth-switch">Already registered? <button class="link-btn" id="toLogin">Log in</button></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== APP SHELL ===================== -->
+  <div id="appView" class="shell hidden">
+
+    <!-- Unified Sleek Glass Top Navigation Bar -->
+    <header class="top-nav glass-panel" id="topNav">
+      <div class="top-nav-inner">
+
+        <!-- Left: Logo Brand & Status Badge -->
+        <div class="brand" id="appBrandBtn" style="cursor:pointer;" title="View Landing Page">
+          <div class="mark-logo pulse-aura">
+            <svg class="levitate-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div class="brand-text">
+            <div class="name">Smart Finance <span class="gradient-text">Hub</span></div>
+            <div class="badge-orbit">
+              <span class="pulse-dot"></span> Antigravity OS
+            </div>
+          </div>
+        </div>
+
+        <!-- Center: Horizontal Nav Links -->
+        <nav class="navlist" id="navlist">
+          <li><a href="#" class="navlink" id="navHomeLink" data-nav="home"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </span><span>Home</span></a></li>
+          <li><a href="#" class="navlink active" data-nav="dashboard"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                  <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                </svg>
+              </span><span>Dashboard</span></a></li>
+          <li><a href="#" class="navlink" data-nav="addIncome"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <line x1="12" y1="8" x2="12" y2="16" />
+                  <line x1="8" y1="12" x2="16" y2="12" />
+                </svg>
+              </span><span>+ Income</span></a></li>
+          <li><a href="#" class="navlink" data-nav="addExpense"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <line x1="8" y1="12" x2="16" y2="12" />
+                </svg>
+              </span><span>− Expense</span></a></li>
+          <li><a href="#" class="navlink" data-nav="investments"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </span><span>Investments</span></a></li>
+          <li><a href="#" class="navlink" data-nav="budgets"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                  <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                </svg>
+              </span><span>Budgets</span></a></li>
+          <li><a href="#" class="navlink" data-nav="goals"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </span><span>Goals</span></a></li>
+          <li><a href="#" class="navlink" data-nav="history"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6" />
+                  <line x1="8" y1="12" x2="21" y2="12" />
+                  <line x1="8" y1="18" x2="21" y2="18" />
+                  <line x1="3" y1="6" x2="3.01" y2="6" />
+                  <line x1="3" y1="12" x2="3.01" y2="12" />
+                  <line x1="3" y1="18" x2="3.01" y2="18" />
+                </svg>
+              </span><span>History</span></a></li>
+          <li><a href="#" class="navlink" data-nav="reports"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10" />
+                  <line x1="12" y1="20" x2="12" y2="4" />
+                  <line x1="6" y1="20" x2="6" y2="14" />
+                </svg>
+              </span><span>Reports</span></a></li>
+          <li><a href="#" class="navlink" data-nav="profile"><span class="ic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span><span>Profile</span></a></li>
+        </nav>
+
+        <!-- Right: Actions, Date, User Info, Notifs -->
+        <div class="top-nav-right">
+          <div class="mono date-chip" id="topDate"></div>
+
+          <button class="notif-bell" id="notifBellBtn" title="Notifications">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+            </svg>
+            <span class="notif-dot hidden" id="notifDot">0</span>
+          </button>
+
+          <div class="user-chip-top" id="userChipWrap">
+            <div class="av glowing-avatar" id="userAvatar">N</div>
+            <div class="who">
+              <div class="n" id="userChipName">Nitish</div>
+              <div class="u" id="userChipHandle">@nitish</div>
+            </div>
+          </div>
+
+          <button class="btn btn-outline-glass btn-sm logout-btn-compact" id="logoutBtn" title="Log out">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+            <span>Log out</span>
+          </button>
+
+          <button class="hamburger" id="hamburgerBtn" aria-label="Toggle mobile menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <div class="main">
+      <!-- Title & Live Status Banner -->
+      <div class="view-header-strip">
+        <div class="view-header-content">
+          <div class="title-wrap">
+            <h1 id="pageTitle" class="gradient-text">Dashboard</h1>
+            <div class="live-pill">
+              <span class="pulse-live"></span>
+              <span>Zero-G Active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="content">
+
+        <!-- ---------- DASHBOARD ---------- -->
+        <section id="view-dashboard" class="view">
+
+          <!-- 5-Grid Stat Cards with Holographic Antigravity Styling -->
+          <div class="grid-5">
+            <div class="stat-card stat-balance tilt-card">
+              <div class="stat-corner-glow"></div>
+              <div class="stat-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <line x1="2" y1="10" x2="22" y2="10" />
+                </svg>
+              </div>
+              <div class="lbl">Total Balance</div>
+              <div class="val mono stat-glow-text" id="statBalance">₹0</div>
+              <div class="sub">Income − expenses &amp; savings</div>
+            </div>
+
+            <div class="stat-card income tilt-card">
+              <div class="stat-corner-glow"></div>
+              <div class="stat-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </div>
+              <div class="lbl">Total Income</div>
+              <div class="val mono" id="statIncome">₹0</div>
+              <div class="sub" id="statIncomeCount">0 entries</div>
+            </div>
+
+            <div class="stat-card expense tilt-card">
+              <div class="stat-corner-glow"></div>
+              <div class="stat-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
+                  <polyline points="17 18 23 18 23 12" />
+                </svg>
+              </div>
+              <div class="lbl">Total Expense</div>
+              <div class="val mono" id="statExpense">₹0</div>
+              <div class="sub" id="statExpenseCount">0 entries</div>
+            </div>
+
+            <div class="stat-card savings tilt-card">
+              <div class="stat-corner-glow"></div>
+              <div class="stat-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m4.93 4.93 4.24 4.24" />
+                  <path d="m14.83 9.17 4.24-4.24" />
+                  <path d="m14.83 14.83 4.24 4.24" />
+                  <path d="m9.17 14.83-4.24 4.24" />
+                </svg>
+              </div>
+              <div class="lbl">Total Savings</div>
+              <div class="val mono" id="statSavings">₹0</div>
+              <div class="sub" id="statGoalsCount">0 active goal(s)</div>
+            </div>
+
+            <div class="stat-card invest tilt-card">
+              <div class="stat-corner-glow"></div>
+              <div class="stat-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m21 16-4 4-4-4" />
+                  <path d="M17 20V4" />
+                  <path d="m3 8 4-4 4 4" />
+                  <path d="M7 4v16" />
+                </svg>
+              </div>
+              <div class="lbl">Portfolio Assets</div>
+              <div class="val mono" id="dashPortValue">₹0</div>
+              <div class="sub" id="dashPortSub">No holdings yet</div>
+            </div>
+          </div>
+
+          <!-- Futuristic Marquee Ticker Band -->
+          <div class="ticker-container glass-panel">
+            <div class="ticker-label">
+              <span class="pulse-live"></span> MARKET PULSE
+            </div>
+            <div class="ticker-wrapper">
+              <div class="ticker-band" id="tickerBand"></div>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="quick-actions">
+            <a href="#" data-nav="investments" class="btn btn-outline-glass btn-glow">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              Explore Investments
+            </a>
+            <button class="btn btn-outline-glass" id="simReminderBtn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+              </svg>
+              Simulate Reminder
+            </button>
+            <a href="#" data-nav="addIncome" class="btn btn-primary btn-sm btn-shimmer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              + Income
+            </a>
+            <a href="#" data-nav="addExpense" class="btn btn-danger btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              − Expense
+            </a>
+          </div>
+
+          <!-- 3-Column Glass Grids -->
+          <div class="grid-3">
+            <div class="card glass-panel tilt-card">
+              <div class="section-title">
+                <h2>Recent Ledger</h2>
+                <a href="#" data-nav="history" class="link-btn">View all →</a>
+              </div>
+              <div class="ledger" id="recentLedger"></div>
+            </div>
+
+            <div class="card glass-panel tilt-card">
+              <div class="section-title">
+                <h2>Budget Limits</h2>
+                <a href="#" data-nav="budgets" class="link-btn">Manage →</a>
+              </div>
+              <div id="budgetSnapshot"></div>
+            </div>
+
+            <div class="card glass-panel tilt-card">
+              <div class="section-title">
+                <h2>Monthly Plans (SIP)</h2>
+                <a href="#" data-nav="investments" class="link-btn">Configure →</a>
+              </div>
+              <div id="dashSipMini"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- ADD INCOME ---------- -->
+        <section id="view-addIncome" class="view hidden">
+          <div class="page-head">
+            <h2>Log Inflow</h2>
+            <p>Inject new capital into your financial orbit.</p>
+          </div>
+          <div class="form-card glass-panel tilt-card">
+            <form id="incomeForm">
+              <div class="field">
+                <label>Category</label>
+                <div class="chip-select" id="incomeChips">
+                  <span class="chip selected" data-cat="Salary">Salary</span>
+                  <span class="chip" data-cat="Freelance">Freelance</span>
+                  <span class="chip" data-cat="Business">Business</span>
+                  <span class="chip" data-cat="Investment">Investment</span>
+                  <span class="chip" data-cat="Gift">Gift</span>
+                  <span class="chip" data-cat="Other">Other</span>
+                </div>
+                <input type="hidden" name="category" id="incomeCategory" value="Salary" />
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="incomeAmount">Amount (₹)</label>
+                  <div class="input-wrap">
+                    <input id="incomeAmount" name="amount" type="number" min="0.01" step="0.01" required
+                      placeholder="0.00" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="incomeDate">Date</label>
+                  <div class="input-wrap">
+                    <input id="incomeDate" name="date" type="date" required />
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="incomeNote">Description / Tag (optional)</label>
+                <div class="input-wrap">
+                  <input id="incomeNote" name="note" type="text" maxlength="80"
+                    placeholder="e.g. October monthly salary" />
+                </div>
+              </div>
+              <button class="btn btn-primary btn-block btn-shimmer" type="submit">
+                <span>Record Income</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- ---------- ADD EXPENSE ---------- -->
+        <section id="view-addExpense" class="view hidden">
+          <div class="page-head">
+            <h2>Log Outflow</h2>
+            <p>Track spending against your predefined planetary budgets.</p>
+          </div>
+          <div class="form-card glass-panel tilt-card">
+            <form id="expenseForm">
+              <div class="field">
+                <label>Category</label>
+                <div class="chip-select" id="expenseChips">
+                  <span class="chip exp selected" data-cat="Food">Food</span>
+                  <span class="chip exp" data-cat="Transport">Transport</span>
+                  <span class="chip exp" data-cat="Housing">Housing</span>
+                  <span class="chip exp" data-cat="Utilities">Utilities</span>
+                  <span class="chip exp" data-cat="Entertainment">Entertainment</span>
+                  <span class="chip exp" data-cat="Health">Health</span>
+                  <span class="chip exp" data-cat="Shopping">Shopping</span>
+                  <span class="chip exp" data-cat="Education">Education</span>
+                  <span class="chip exp" data-cat="Other">Other</span>
+                </div>
+                <input type="hidden" name="category" id="expenseCategory" value="Food" />
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="expenseAmount">Amount (₹)</label>
+                  <div class="input-wrap">
+                    <input id="expenseAmount" name="amount" type="number" min="0.01" step="0.01" required
+                      placeholder="0.00" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="expenseDate">Date</label>
+                  <div class="input-wrap">
+                    <input id="expenseDate" name="date" type="date" required />
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label for="expenseNote">Description / Note (optional)</label>
+                <div class="input-wrap">
+                  <input id="expenseNote" name="note" type="text" maxlength="80"
+                    placeholder="e.g. Cloud servers &amp; coffee" />
+                </div>
+              </div>
+              <button class="btn btn-danger btn-block" type="submit">
+                <span>Record Expense</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- ---------- INVESTMENTS ---------- -->
+        <section id="view-investments" class="view hidden">
+          <div class="page-head">
+            <h2>Investment Galaxy</h2>
+            <p>Simulated zero-gravity assets, smart market indices &amp; automated monthly plans.</p>
+          </div>
+
+          <div class="grid-2" style="margin-bottom:24px;">
+            <div class="stat-card invest tilt-card">
+              <div class="stat-corner-glow"></div>
+              <div class="lbl">Total Portfolio Valuation</div>
+              <div class="val mono stat-glow-text" id="portValue">₹0</div>
+              <div class="sub">Current market marked-to-model</div>
+            </div>
+            <div class="stat-card invest tilt-card">
+              <div class="stat-corner-glow"></div>
+              <div class="lbl">Net Return / Yield</div>
+              <div class="val mono" id="portGain">₹0</div>
+              <div class="sub">Unrealized profit &amp; loss</div>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <h2>Market Instruments — Live Simulation</h2>
+          </div>
+          <div class="market-grid" id="marketGrid"></div>
+
+          <div class="grid-2" style="margin-top:28px;align-items:start;">
+            <div>
+              <div class="section-title">
+                <h2>Your Portfolio Holdings</h2>
+              </div>
+              <div id="holdingsBody"></div>
+
+              <div class="section-title" style="margin-top:28px;">
+                <h2>Systematic Investment Plans (SIP)</h2>
+              </div>
+              <div id="sipList"></div>
+            </div>
+
+            <div>
+              <div class="form-card glass-panel tilt-card" style="margin-bottom:20px;">
+                <h2 style="margin-bottom:16px;">Acquire Holding</h2>
+                <div id="investError" class="form-error hidden"></div>
+                <form id="investForm">
+                  <div class="field">
+                    <label for="investInstrument">Instrument</label>
+                    <div class="input-wrap">
+                      <select id="investInstrument" name="instrument"></select>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="investAmount">Amount to invest (₹)</label>
+                    <div class="input-wrap">
+                      <input id="investAmount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" />
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-block btn-shimmer" type="submit">Execute Buy Order</button>
+                </form>
+              </div>
+
+              <div class="form-card glass-panel tilt-card">
+                <h2 style="margin-bottom:16px;">Automate Monthly Plan</h2>
+                <div id="sipError" class="form-error hidden"></div>
+                <form id="sipForm">
+                  <div class="field">
+                    <label for="sipInstrument">Target Instrument</label>
+                    <div class="input-wrap">
+                      <select id="sipInstrument" name="instrument"></select>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="sipAmount">Monthly allocation (₹)</label>
+                    <div class="input-wrap">
+                      <input id="sipAmount" name="amount" type="number" min="0.01" step="0.01" placeholder="0.00" />
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="sipDay">Execution day of month (1-28)</label>
+                    <div class="input-wrap">
+                      <input id="sipDay" name="day" type="number" min="1" max="28" value="1" />
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-block btn-shimmer" type="submit">Activate SIP</button>
+                </form>
+                <div class="form-hint" style="margin-top:12px;">Simulated automation — triggers during active browser
+                  sessions with instant telemetry.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- BUDGET MANAGEMENT ---------- -->
+        <section id="view-budgets" class="view hidden">
+          <div class="page-head">
+            <h2>Budget Horizons</h2>
+            <p>Establish strict spending bounds per category with real-time velocity tracking.</p>
+          </div>
+          <div class="form-card glass-panel tilt-card" style="margin-bottom:28px;">
+            <form id="budgetForm">
+              <div class="field-row">
+                <div class="field">
+                  <label for="budgetCategory">Spending Sector</label>
+                  <div class="input-wrap">
+                    <select id="budgetCategory" name="category" required>
+                      <option value="Food">Food</option>
+                      <option value="Transport">Transport</option>
+                      <option value="Housing">Housing</option>
+                      <option value="Utilities">Utilities</option>
+                      <option value="Entertainment">Entertainment</option>
+                      <option value="Health">Health</option>
+                      <option value="Shopping">Shopping</option>
+                      <option value="Education">Education</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="budgetLimit">Monthly Cap (₹)</label>
+                  <div class="input-wrap">
+                    <input id="budgetLimit" name="limit" type="number" min="1" step="1" required
+                      placeholder="e.g. 5000" />
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-block btn-shimmer" type="submit">Lock Sector Budget</button>
+            </form>
+          </div>
+          <div class="section-title">
+            <h2>Active Spending Horizons</h2>
+          </div>
+          <div class="budget-list" id="budgetList"></div>
+        </section>
+
+        <!-- ---------- SAVINGS GOALS ---------- -->
+        <section id="view-goals" class="view hidden">
+          <div class="page-head">
+            <h2>Savings Missions</h2>
+            <p>Lock on targets and systematically accumulate reserves.</p>
+          </div>
+          <div class="form-card glass-panel tilt-card" style="margin-bottom:28px;">
+            <form id="goalForm">
+              <div class="field">
+                <label for="goalName">Mission Name</label>
+                <div class="input-wrap">
+                  <input id="goalName" name="name" type="text" required maxlength="40"
+                    placeholder="e.g. Lunar Base Fund / Emergency Vault" />
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="goalTarget">Target Cap (₹)</label>
+                  <div class="input-wrap">
+                    <input id="goalTarget" name="target" type="number" min="1" step="1" required
+                      placeholder="e.g. 100000" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="goalDeadline">Target Horizon (optional)</label>
+                  <div class="input-wrap">
+                    <input id="goalDeadline" name="deadline" type="date" />
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-block btn-shimmer" type="submit">Launch Savings Mission</button>
+            </form>
+          </div>
+          <div class="section-title">
+            <h2>Active Missions</h2>
+          </div>
+          <div class="goal-grid" id="goalGrid"></div>
+        </section>
+
+        <!-- ---------- TRANSACTION HISTORY ---------- -->
+        <section id="view-history" class="view hidden">
+          <div class="page-head">
+            <h2>Ledger History</h2>
+            <p>Immutable log of every credit, debit and reserve movement.</p>
+          </div>
+          <form class="toolbar glass-panel" id="historyFilterForm">
+            <div class="field">
+              <label for="filterType">Classification</label>
+              <div class="input-wrap">
+                <select id="filterType" name="type">
+                  <option value="all">All Movements</option>
+                  <option value="income">Income Only</option>
+                  <option value="expense">Expense Only</option>
+                  <option value="savings">Savings Only</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="filterCategory">Sector</label>
+              <div class="input-wrap">
+                <select id="filterCategory" name="category">
+                  <option value="all">All Sectors</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="filterFrom">From</label>
+              <div class="input-wrap">
+                <input id="filterFrom" type="date" name="from" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="filterTo">To</label>
+              <div class="input-wrap">
+                <input id="filterTo" type="date" name="to" />
+              </div>
+            </div>
+            <div class="field grow">
+              <label for="filterSearch">Search Query</label>
+              <div class="input-wrap">
+                <input id="filterSearch" type="text" name="search" placeholder="Search memo or tag…" />
+              </div>
+            </div>
+            <button class="btn btn-primary btn-sm" type="submit">Filter</button>
+            <button class="btn btn-outline-glass btn-sm" type="button" id="clearFilters">Reset</button>
+          </form>
+          <div class="section-title">
+            <h2 id="historyCount">0 records</h2>
+          </div>
+          <div class="ledger glass-panel" id="historyLedger"></div>
+        </section>
+
+        <!-- ---------- REPORTS ---------- -->
+        <section id="view-reports" class="view hidden">
+          <div class="page-head">
+            <h2>Analytics &amp; Telemetry</h2>
+            <p>Visual breakdown of income streams, burn rate and category dissipation.</p>
+          </div>
+
+          <div class="section-title">
+            <h2>6-Month Cash Flow Velocity</h2>
+          </div>
+          <div class="card glass-panel tilt-card" style="margin-bottom:28px;">
+            <div class="bars" id="barsChart"></div>
+            <div class="legend-row">
+              <span><span class="legend-dot" style="background:var(--cyan);"></span>Income Inflow</span>
+              <span><span class="legend-dot" style="background:var(--red);"></span>Expense Burn</span>
+            </div>
+          </div>
+
+          <div class="section-title">
+            <h2>Current Month Sector Dissipation</h2>
+          </div>
+          <div class="card glass-panel tilt-card" id="donutCard"></div>
+        </section>
+
+        <!-- ---------- PROFILE ---------- -->
+        <section id="view-profile" class="view hidden">
+          <div class="page-head">
+            <h2>Pilot Settings</h2>
+            <p>Manage security protocols, credentials and account parameters.</p>
+          </div>
+          <div class="profile-grid">
+            <div class="card glass-panel tilt-card">
+              <h2 style="margin-bottom:16px;">Identity Details</h2>
+              <form id="profileForm">
+                <div class="field">
+                  <label for="profileName">Full Name</label>
+                  <div class="input-wrap">
+                    <input id="profileName" name="name" type="text" required />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="profileEmail">Email Address</label>
+                  <div class="input-wrap">
+                    <input id="profileEmail" name="email" type="email" required />
+                  </div>
+                  <div class="form-hint" id="profileEmailVerificationBadge" style="display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;">
+                    <span style="color:var(--primary);font-weight:600;">✓ Verified Gmail Account</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="profilePhone">Mobile Number</label>
+                  <div class="input-wrap">
+                    <input id="profilePhone" name="phone" type="tel" placeholder="+91 9876543210" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="profileUsername">System Handle</label>
+                  <div class="input-wrap">
+                    <input id="profileUsername" type="text" disabled style="opacity:.5;" />
+                  </div>
+                </div>
+                <div class="form-hint" id="profileJoined" style="margin-bottom:16px;"></div>
+                <button class="btn btn-primary" type="submit">Save Updates</button>
+              </form>
+            </div>
+            <div class="card glass-panel tilt-card">
+              <h2 style="margin-bottom:16px;">Access Key / Password</h2>
+              <form id="passwordForm">
+                <div class="field">
+                  <label for="pwCurrent">Current Password</label>
+                  <div class="input-wrap has-toggle">
+                    <input id="pwCurrent" name="current" type="password" required placeholder="Enter current password" />
+                    <button type="button" class="pw-toggle-btn" data-target="pwCurrent" aria-label="Toggle password visibility">
+                      <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      <svg class="eye-closed hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="pwNext">New Strong Password</label>
+                  <div class="input-wrap has-toggle">
+                    <input id="pwNext" name="next" type="password" required minlength="8" placeholder="Enter new strong password" />
+                    <button type="button" class="pw-toggle-btn" data-target="pwNext" aria-label="Toggle password visibility">
+                      <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      <svg class="eye-closed hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Live Strength Indicator -->
+                  <div class="pw-strength-box" id="settingsPwStrengthBox">
+                    <div class="pw-strength-header">
+                      <span class="pw-strength-title">Security Strength: <strong id="settingsPwStrengthLabel" class="pw-strength-none">None</strong></span>
+                      <span class="pw-strength-score" id="settingsPwScore">0/5 rules met</span>
+                    </div>
+                    <div class="pw-strength-bar-track">
+                      <div class="pw-strength-bar" id="settingsPwStrengthBar"></div>
+                    </div>
+                    <ul class="pw-requirements" id="settingsPwRequirements">
+                      <li data-rule="length" class="req-item"><span class="req-icon">✕</span> 8+ characters</li>
+                      <li data-rule="upper" class="req-item"><span class="req-icon">✕</span> 1 uppercase (A-Z)</li>
+                      <li data-rule="lower" class="req-item"><span class="req-icon">✕</span> 1 lowercase (a-z)</li>
+                      <li data-rule="number" class="req-item"><span class="req-icon">✕</span> 1 number (0-9)</li>
+                      <li data-rule="special" class="req-item"><span class="req-icon">✕</span> 1 special symbol (!@#$)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="pwConfirm">Confirm New Password</label>
+                  <div class="input-wrap has-toggle">
+                    <input id="pwConfirm" name="confirm" type="password" required minlength="8" placeholder="Repeat new password" />
+                    <button type="button" class="pw-toggle-btn" data-target="pwConfirm" aria-label="Toggle password visibility">
+                      <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                      <svg class="eye-closed hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="pw-match-hint" id="settingsPwMatchHint"></div>
+                </div>
+                <button class="btn btn-primary" type="submit">Update Key</button>
+              </form>
+            </div>
+          </div>
+          <div class="danger-zone glass-panel">
+            <h3>Terminate Account</h3>
+            <p>Permanently purges all ledger transactions, telemetry, budgets and investments from local storage.</p>
+            <button class="btn btn-danger" id="deleteAccountBtn">Purge Account</button>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- NOTIFICATIONS PANEL -->
+  <div class="modal-overlay hidden" id="notifOverlay">
+    <div class="modal notif-modal glass-panel">
+      <button class="modal-close" id="notifModalClose" aria-label="Close">✕</button>
+      <div class="sim-ribbon">Telemetry</div>
+      <h1 style="font-size:22px;">System Alerts</h1>
+      <div class="auth-sub">Scheduled SIP triggers, smart budget caps and portfolio telemetry.</div>
+      <div id="notifList" class="notif-list"></div>
+    </div>
+  </div>
+
+  <div id="toastContainer"></div>
+
+  <!-- 100% Free Firebase Authentication for Google Sign-In & Verification -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="script.js?v=4.0"></script>
+</body>
+
+</html>
