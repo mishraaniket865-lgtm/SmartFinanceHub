@@ -7,3 +7,9 @@ __pycache__/
 .vscode/
 .idea/
 smartfinance.db
+
+# Firebase credentials — NEVER commit these
+serviceAccountKey.json
+ServiceAccountkey.json
+*serviceaccount*.json
+firebase-adminsdk*.json
